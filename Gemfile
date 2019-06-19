@@ -26,7 +26,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap', '~> 4.3.1'
 gem 'simple_form', '~> 3.5', '>= 3.5.1'
 
+gem 'devise', '~> 4.4', '>= 4.4.3'
+gem 'devise-bootstrap-views', '~> 1.1'
 
+gem 'will_paginate', '~> 3.1', '>= 3.1.7'
+gem 'will_paginate-bootstrap', git: 'https://github.com/benitkibabu/will_paginate-bootstrap'
+
+# gem 'cancancan', '~> 2.3'
+
+# gem 'rails-i18n', '~> 4.0', '>= 4.0.9'
+# gem 'devise-i18n', '~> 1.8'
+# gem 'will-paginate-i18n', '~> 0.1.15'
+
+# gem 'carrierwave', '~> 1.3', '>= 1.3.1'
+# gem 'carrierwave-i18n', '~> 0.2.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

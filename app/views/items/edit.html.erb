@@ -1,0 +1,7 @@
+<h1><%= t('editing', name: t('item', count: 1)) %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('show'), buy_list_item_path(@item.buy_list.id, @item.id), class: 'btn btn-info', role: :button %>
+
+

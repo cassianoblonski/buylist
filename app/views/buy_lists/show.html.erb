@@ -1,0 +1,28 @@
+<h1><%= @buy_list.name %></h1>
+<span> Bought: <%= @buy_list.finished ? 'Yes' : 'No' %> </span>
+<table class="table table-striped table-hover">
+  <thead>
+    <th scope="row"><%= t('buy_list.name') %>:</th>
+    <th scope="row"><%= t('buy_list.quantity') %>:</th>
+    <th scope="row"><%= t('buy_list.actions') %>:</th>
+  </thead>
+  <tbody>
+    <% @buy_list.items.each do |item| %>
+      <tr>
+        <td><%= item.name %></td>
+        <td><%= item.quantity %></td>
+        <td>
+
+        <div class="btn-group btn-group-sm" role="group">
+            <%= link_to t('show'), buy_list_item_path(item.buy_list.id, item.id), class: 'btn btn-info', role: :button %>
+            <%= link_to t('edit'), edit_buy_list_item_path(item.buy_list.id, item.id), class: 'btn btn-success', role: :button %>
+            <%= link_to t('destroy'), buy_list_item_path(@buy_list.id, item), method: :delete, remote: true, class: 'btn btn-danger', role: :button %>
+        </div>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('Update List'), edit_buy_list_path(@buy_list), class: 'btn btn-primary', role: :button %>
+<%= link_to t('Add item'), new_buy_list_item_path(@buy_list.id), class: 'btn btn-default ', role: :button %>

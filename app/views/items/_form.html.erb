@@ -1,0 +1,19 @@
+<%= simple_form_for([ BuyList.find(params[:buy_list_id]), @item]) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+  </div>
+
+   <div class="form-inputs">
+    <%= f.input :quantity %>
+  </div>
+
+
+
+  <div class="form-actions">
+    <%= link_to 'Back', buy_list_path(@buy_list), class: 'btn btn-outline-secondary', role: :button %>
+    <%= f.button :submit, class: 'btn btn-primary' %>
+  </div>
+<% end %>
